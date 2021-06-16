@@ -1,0 +1,65 @@
+Normal pyramide:
+Set up the hight as a number
+Ask user for height
+Do asking user for height, while the number he's giving, is smaller than 0 or greater than 8.
+Create i number of rows
+    Create j number of colums, which j <= i
+        Write in each a sign #
+    Make new line
+
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // n - height of pyramid
+    int n;
+
+    do
+    {
+        //prompt user for height
+        n = get_int("Height: ");
+    }
+
+    // allow only height numbers between <1;8>
+    while (n < 1 || n > 8);
+
+    printf("Stored: %i\n", n);
+
+  // i - number of rows
+  // create number of rows
+    for (int i = 0; i < n; i++)
+    {
+        // j - number of columns
+        // create number of columns equal to number of rows
+        for (int j = 0; j <= i; j++)
+        {
+        printf("#");
+
+        }
+        printf("\n");
+    }
+}
+
+
+Turn out pyramide:
+
+Set up the hight as a number
+Ask user for height
+Do asking user for height, while the number he's giving, is smaller than 0 or greater than 8.
+
+Create i number of rows
+    Create j number of colums, which j <= i
+        Create k number of colums, which k <= j
+            Write in each a sing "."
+        Write in each a sign #
+    Make new line
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+1.prompts the user for a credit card number (assume entirly numeric) (use get_long, not int)
+    -----> use loop: do, while
+    catch inputs that are not credit card numbers (e.g., a phone number), even if numeric as "INVALID" ----> too short?
+
+2.report (via printf) whether it is a valid American Express, MasterCard, or Visa card number,
+program’s last line of output be AMEX\n or MASTERCARD\n or VISA\n or INVALID\n
+
+
+
+1.//ask for nr
+do:
+    ask for nr, use get_long
+while:
+    nr incorrect (letters, "-" between)
+
+do:
+    print(INVALID)
+while:
+    nr too short/too long
+
+2.//checksum Luhn’s Algorithm
+Multiply every other digit by 2, starting with the number’s second-to-last digit, and then add those products’ digits together.
+Add the sum to the sum of the digits that weren’t multiplied by 2.
+If the total’s last digit is 0 (or, put more formally, if the total modulo 10 is congruent to 0), the number is valid!
+
+if:
+    nr %
+
+
+
+
+
+
+
+
+
+else: print
+INVALID
+
+
+3.//validate the nr with company
+
+if: (15 digits and starts with 34 or 37 )
+    print(AMEX\n)
+
+if: (16 digits and starts with <51 ; 55>)
+    print(MASTERCARD\n)
+
+if(13 or 16 digits and starts with 4)
+    print(VISA\n)
+
+else:
+    print(INVALID\n)
+
+
+ &&  (nr >= y15)   && (nr < y16 - y0)  && (nr15and16 == 53)
+ 
+  if ( step4 > 0 || step4 < 0 )
+        {
+            printf("INVALID\n");
+        }
+        
+        while( nr < 1000000000000 );
+    if ( nr < power( 10, 12 ) || (nr > 9999999999999 & nr < power( 10, 14 )  )  || nr > 9999999999999999 )
+    
+    
+    if (step4 > 0 || step4 < 0 )
