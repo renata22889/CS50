@@ -8,22 +8,70 @@
         <link href="styles.css" rel="stylesheet">
         <title>My Webpage</title>
 
-        <script>
+        <script type="text/javascript">
+
+        // Function sleep - temporary not used
+        function sleep(milliseconds) {
+            const date = Date.now();
+            let currentDate = null;
+            do {
+                currentDate = Date.now();
+            } while (currentDate - date < milliseconds);
+        }
 
             // When DOM is loaded, run the following scipt
             document.addEventListener('DOMContentLoaded', function() {
 
+                // When click on "submit" show alert
+                let Alert1 = document.getElementById("alert1");
+                let Alert2 = document.getElementById("alert2");
+                let Alert3 = document.getElementById("alert3");
+                let Alert4 = document.getElementById("alert4");
+                let Alert5 = document.getElementById("alert5");
+
+                let email = document.getElementById("exampleFormControlInput1");
+                let text = document.getElementById("txtbx");
+                let checkbox = document.getElementById("exampleCheck1");
 
 
 
-                // When click on "submit" show confirmation
-                document.addEventListener('click', function() {
+                document.querySelector('form').addEventListener('submit', function ()
+                {
 
-                    document.querySelector('#feedback').innerHTML = 'Email sent!';
+                    // Show alert if email is empty
+                    if (email.value.length < 4)
+                    {
+                    Alert5.classList.remove("hidden");
+                    event.preventDefault();
+                    }
+
+                    // Show alert if textbox is empty
+                    if (text.value.length < 1 )
+                    {
+                    Alert3.classList.remove("hidden");
+                    event.preventDefault();
+                    }
+
+                    // Show alert if checkbox is empty - works
+                    if (checkbox.checked==false)
+                    {
+                    Alert4.classList.remove("hidden");
+                    event.preventDefault()
+                    }
+
+                    else
+                    {
+                    Alert2.classList.remove("hidden");
+                    Alert1.classList.add("hidden");
+                    event.preventDefault()
+                    }
+
 
                 });
 
             });
+
+
 
         </script>
 
@@ -36,10 +84,9 @@
 
         <header>
 
-
             forest spa
             <h5>contact</h5>
-            <h5>.</h5>
+            <h5>...</h5>
         </header>
 
         <!-- navigation bar-->
@@ -58,9 +105,10 @@
             <!-- forms-->
             <form>
 
+                <!-- choose topic-->
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Thema</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select name="sent_thema" class="form-control" id="exampleFormControlSelect1">
                         <option>Thema 1</option>
                         <option>Thema 2</option>
                         <option>Thema 3</option>
@@ -68,19 +116,20 @@
                         <option>Thema 5</option>
                     </select>
                 </div>
+
+                <!-- email field-->
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="your@email.com" >
+                    <input type="email" class="form-control" id="exampleFormControlInput1" name="sent_email"placeholder="your@email.com" >
                 </div>
 
+                <!-- textbox-->
                 <div class="form-group">
-                    <label for="111">Text</label>
-                    <textarea type="text" class="form-control" id="111" placeholder="text" rows="3"></textarea>
+                    <label for="txtbx">Text</label>
+                    <textarea type="text" class="form-control" id="txtbx" placeholder="text" name="sent_text" rows="3"></textarea>
                 </div>
 
-
-
-
+                <!-- checkbox and submit button-->
                 <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Terms and conditions</label>
@@ -92,10 +141,42 @@
             <p id="feedback"></p>
 
 
-            <!-- alert-->
-            <div class="alert alert-warning alert-dismissible fade show hidden" role="alert" >
+            <!-- alert 1-->
+            <div id="alert1" class="alert alert-warning alert-dismissible fade show" role="alert" >
+            <strong id="feedback">Holy guacamole!</strong> Now you can send a message to us!
+                <button type="button" class="close" id="closeAlert1" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <!-- alert 2-->
+            <div id="alert2" class="alert alert-success alert-dismissible fade show hidden" role="alert" >
             <strong id="feedback">Holy guacamole!</strong> You successfully sent your message.
-                <button type="button" class="close" id="success-alert" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" id="closeAlert2" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <!-- alert 3-->
+            <div id="alert3" class="alert alert-success alert-dismissible fade show hidden" role="alert" >
+            <strong id="feedback">Holy guacamole!</strong> Text box is empty :(
+                <button type="button" class="close" id="closeAlert3" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <!-- alert 4-->
+            <div id="alert4" class="alert alert-success alert-dismissible fade show hidden" role="alert" >
+            <strong id="feedback">Holy guacamole!</strong> Please accept terms & conditions
+                <button type="button" class="close" id="closeAlert4" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <!-- alert 5-->
+            <div id="alert5" class="alert alert-success alert-dismissible fade show hidden" role="alert" >
+            <strong id="feedback">Holy guacamole!</strong> Please write your email
+                <button type="button" class="close" id="closeAlert5" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
             </div>

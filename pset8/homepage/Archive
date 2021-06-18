@@ -1,0 +1,11 @@
+ARCHIVE
+
+
+HREF LINKS FOR LOGIN/REGISTER
+<nav class="nav-link">
+            <a class="register" href="login.html">Admin</a>
+            <a class="register" href="register.html">Register</a>
+            </nav>
+
+SEARCH BAR
+<!-- <input id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Search">  -->
